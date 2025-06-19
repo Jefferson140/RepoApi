@@ -41,3 +41,7 @@ app.delete('/api/datos', (req, res) => {
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`);
 });
+
+process.on('uncaughtException', (err) => {
+  console.error('Uncaught Exception:', JSON.stringify(err, Object.getOwnPropertyNames(err)));
+});
